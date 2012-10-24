@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Metablog Home Screen</title>
+		<title>About Screen</title>
 		<link rel="apple-touch-icon" href="appicon.png" />
 		<link rel="apple-touch-startup-image" href="startup.png">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,31 +22,17 @@
 		
 		
 		<div class="title">
-			<h1>MetaBlog</h1>
+			<h1>About MetaBlog</h1>
 		</div>
 		
 		<div class="explanation">
-			<p>This is the welcome screen where users can log in or register to make an account.</p>
+			<p>Will contain information about the app including things like purpose, how to use, faqs, etc.</p>
 		</div>
 			
 		<div class="buttonarea">
 		
-			<form action="myblogs.php" id="someform" method="get">
-					<label>Username: <input class="forminput" type="text" name="username" /></label>
-    				<label>Password: <input class="forminput" type="text" name="password" autocapitalize="off" /></label>
-				<input type="submit" class="medium red awesome" value="Log In" />
-			</form>
-
 			<form action="login.php" id="someform" method="get">
-				<input type="submit" class="medium red awesome" value="Forgot Password?" />
-			</form>
-	
-			<form action="register.php" id="someform" method="get">
-				<input type="submit" class="medium red awesome" value="Register"/>
-			</form>
-			
-			<form action="about-login.php" id="someform" method="get">
-				<input type="submit" class="medium red awesome" value="About"/>
+				<input type="submit" class="medium red awesome" value="Back" />
 			</form>
 
 		</div>

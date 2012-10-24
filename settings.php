@@ -31,6 +31,14 @@
 		<div class="explanation">
 			<p>Controls the settings for the app including how to add new blogs, delete blogs, create filters for the stream view, and other functionality that we haven't thought of yet.</p>
 		</div>
+		
+		<div class="buttonarea">
+			<form action="about-settings.php" id="someform" method="get">
+				<input type="submit" class="medium red awesome" value="About"/>
+			</form>
+		</div>
+		
+		</br></br></br>
 			
 		<div class="buttonbar">
 		
