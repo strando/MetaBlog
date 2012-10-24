@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Register Screen</title>
+		<title>About Screen</title>
 		<link rel="apple-touch-icon" href="appicon.png" />
 		<link rel="apple-touch-startup-image" href="startup.png">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,22 +16,23 @@
 
 	<body>
 		
+		<div class="picture">
+			<img src="strandsm.png"/>	
+		</div>
+		
+		
 		<div class="title">
-			<h1>Register</h1>
+			<h1>About MetaBlog</h1>
 		</div>
 		
 		<div class="explanation">
-			<p>Screen for new users to sign up and create a profile for the app.</p>
+			<p>Will contain information about the app including things like purpose, how to use, faqs, etc.</p>
 		</div>
 			
 		<div class="buttonarea">
 		
-			<form action="myblogs.php" id="someform" method="get">
-				<label>User Name: <input class="forminput" type="text" name="username" /></label>
-    			<label>Email: <input class="forminput" type="text" name="email" autocapitalize="off" /></label>
-    			<label>Password: <input class="forminput" type="text" name="username" /></label>
-    			<label>Re-enter Password: <input class="forminput" type="text" name="username" /></label>
-				<input type="submit" class="medium red awesome" value="Continue" />
+			<form action="login.php" id="someform" method="get">
+				<input type="submit" class="medium red awesome" value="Back" />
 			</form>
 
 		</div>

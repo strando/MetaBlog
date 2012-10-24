@@ -17,7 +17,7 @@
 	<body>
 		
 		<div class="logout-button">
-			<form action="login.php" id="someform" method="post">
+			<form action="login.php" id="someform" method="get">
 				<input type="submit" class="bottom-bar-button" value="Log Out"/>
 			</form>
 		</div>
@@ -34,19 +34,19 @@
 			
 		<div class="buttonbar">
 		
-			<form action="myblogs.php" id="someform" method="post">
+			<form action="myblogs.php" id="someform" method="get">
 				<input type="submit" class="bottom-bar-button" value="My Blogs" />
 			</form>
 			
-			<form action="discover.php" id="someform" method="post">
+			<form action="discover.php" id="someform" method="get">
 				<input type="submit" class="bottom-bar-button" value="Discover"/>
 			</form>
 			
-			<form action="stream-view.php" id="someform" method="post">
+			<form action="stream-view.php" id="someform" method="get">
 				<input type="submit" class="bottom-bar-button" value="Stream View"/>
 			</form>
 			
-			<form action="settings.php" id="someform" method="post">
+			<form action="settings.php" id="someform" method="get">
 				<input type="submit" class="bottom-bar-button" value="Settings"/>
 			</form>
 

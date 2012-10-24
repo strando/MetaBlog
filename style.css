@@ -7,6 +7,7 @@ body {
 }
 h1{
     text-align:center;
+    margin-top: 0px;
 }
 h2 {
     font-size: 20px;
@@ -24,6 +25,13 @@ h2 {
     height: 250px;
     background: linear-gradient(180deg, #087195, #000);
     background: -webkit-linear-gradient(#000, #087195);
+}
+.picture {
+    width:100px;
+    height:100px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
 }
 .explanation {
     background: #8fc2d6;
