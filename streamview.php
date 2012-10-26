@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>MetaBlog | Settings</title> 
+	<title>MetaBlog | Stream View</title> 
 	<meta charset="utf-8">
 	<meta name="apple-mobile-web-app-capable" content="yes">
  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -22,7 +22,7 @@
 <div data-role="page">
 
 	<div data-role="header">
-		<h1>Settings</h1>
+		<h1>Stream View</h1>
 		<a href="login.php" data-icon="check" id="logout" class="ui-btn-right">Logout</a>
 	</div><!-- /header -->
 
@@ -31,24 +31,20 @@
 		<div data-role="fieldcontain">
 		
 			<div class="explanation">
-				<p>Controls the settings for the app including how to add new blogs, delete blogs, create filters for the stream view, and other functionality that we haven't thought of yet.</p>
+				<p>Here is where people can create 'playlists' or filters of their blogs that they can see in a visually-pleasing, cascading view.</p>
 			</div>
-			
-			<form action="about-settings.php" id="someform" method="get">
-				<input type="submit" value="About Metablog"/>
-			</form>
 			
 		</div>	
 	
 	</div><!-- /content -->
 
-     <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
+    <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
 		<ul>
 			<li><a href="myblogs.php" id="heart" data-icon="custom">My Blogs</a></li>
 			<li><a href="discover.php" id="magnify" data-icon="custom">Discover</a></li>
-			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream View</a></li>
-			<li><a href="settings.php" id="gear" data-icon="custom" class="ui-btn-active">Settings</a></li>
+			<li><a href="streamview.php" id="landscape" data-icon="custom" class="ui-btn-active">Stream View</a></li>
+			<li><a href="settings.php" id="gear" data-icon="custom">Settings</a></li>
 		</ul>
 		</div>
 	</div>
