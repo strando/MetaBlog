@@ -33,9 +33,22 @@
 			<div class="explanation">
 				<p>Controls the settings for the app including how to add new blogs, delete blogs, create filters for the stream view, and other functionality that we haven't thought of yet.</p>
 			</div>
+			<form action="#" id="someform" method="get">
+				<input type="submit" value="Add Blog" data-icon="plus"/>
+			</form>
+			<form action="#" id="someform" method="get">
+				<input type="submit" value="Delete Blog" data-icon="minus"/>
+			</form>
+			<form action="#" id="someform" method="get">
+				<input type="submit" value="Manage Filters" data-icon="grid"/>
+			</form>
+			<form action="#" id="someform" method="get">
+				<input type="submit" value="Edit Profile" data-icon="star"/>
+			</form>
+
 			
 			<form action="about-settings.php" id="someform" method="get">
-				<input type="submit" value="About Metablog"/>
+				<input type="submit" value="About Metablog" data-icon="info"/>
 			</form>
 			
 		</div>	

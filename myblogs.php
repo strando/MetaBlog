@@ -21,13 +21,26 @@
 
 <div data-role="page">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 	<h1>My Blogs</h1>
-	<a href="login.php" data-icon="check" id="logout" class="ui-btn-right">Logout</a>
+	<a href="login.php" data-icon="check" id="logout" class="ui-btn-right" >Logout</a>
 
 	</div><!-- /header -->
 
 	<div data-role="content">
+		<form action="settings.php" id="newblogform" method="get">
+			<input type="submit" value="Add a new blog" data-icon="plus"/>
+		</form>
+		
+		
+		<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+		   <h3>Blog 1<img src="wdbj7-first-alert-red-icon-20120531.jpeg"/></h3>
+		   <p>TEST</p>
+		</div>
+		<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+		   <h3>Blog 2</h3>
+		   <img src="strandsm.png"/>
+		</div>
 	
 		<div data-role="fieldcontain">
 		
