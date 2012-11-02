@@ -1,16 +1,56 @@
-		.nav-glyphish-example .ui-btn .ui-btn-inner { padding-top: 40px !important; }
-		.nav-glyphish-example .ui-btn .ui-icon { width: 30px!important; height: 30px!important; margin-left: -15px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; }
-		#gear .ui-icon { background:  url(glyphish-icons/19-gear.png) 50% 50% no-repeat; background-size: 24px 22px; }
-		#movie2 .ui-icon { background: url(glyphish-icons/46-movie-2.png) 50% 50% no-repeat; background-size: 12px 26px; }
-		#heart .ui-icon { background:  url(glyphish-icons/29-heart.png) 50% 50% no-repeat; background-size: 24px 16px;  }
-		#lightbulb .ui-icon { background:  url(glyphish-icons/84-lightbulb.png) 50% 50% no-repeat;  background-size: 12px 26px; }
-		#user .ui-icon { background:  url(glyphish-icons/111-user.png) 50% 50% no-repeat;  background-size: 22px 27px; }
-        #wrench .ui-icon { background:  url(glyphish-icons/157-wrench.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-		#glasses1 .ui-icon { background:  url(glyphish-icons/163-glasses-1.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-		#magnify .ui-icon { background:  url(glyphish-icons/06-magnify.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-		#widescreen .ui-icon { background:  url(glyphish-icons/107-widescreen.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-		#landscape .ui-icon { background:  url(glyphish-icons/121-landscape.png) 50% 50% no-repeat;  background-size: 22px 24px; }
-        
+.nav-glyphish-example .ui-btn .ui-btn-inner { 
+	padding-top: 40px !important; 
+}
+.nav-glyphish-example .ui-btn .ui-icon { 
+	width: 30px!important; 
+	height: 30px!important; 
+	margin-left: -15px !important; 
+	box-shadow: none!important; 
+	-moz-box-shadow: none!important; 
+	-webkit-box-shadow: none!important; 
+	-webkit-border-radius: 0 !important; 
+	border-radius: 0 !important; 
+}
+#gear .ui-icon { 
+	background:  url(glyphish-icons/19-gear.png) 50% 50% no-repeat; 
+	background-size: 24px 22px; 
+}
+#movie2 .ui-icon { 
+	background: url(glyphish-icons/46-movie-2.png) 50% 50% no-repeat; 
+	background-size: 12px 26px; 
+}
+#heart .ui-icon { 
+	background:  url(glyphish-icons/29-heart.png) 50% 50% no-repeat; 
+	background-size: 24px 16px;  
+}
+#lightbulb .ui-icon { 
+	background:  url(glyphish-icons/84-lightbulb.png) 50% 50% no-repeat;  b
+	ackground-size: 12px 26px; 
+}
+#user .ui-icon { 
+	background:  url(glyphish-icons/111-user.png) 50% 50% no-repeat;  
+	background-size: 22px 27px; 
+}
+#wrench .ui-icon { 
+	background:  url(glyphish-icons/157-wrench.png) 50% 50% no-repeat;  
+	background-size: 22px 24px; 
+}
+#glasses1 .ui-icon { 
+	background:  url(glyphish-icons/163-glasses-1.png) 50% 50% no-repeat;  
+	background-size: 22px 24px; 
+}
+#magnify .ui-icon { 
+	background:  url(glyphish-icons/06-magnify.png) 50% 50% no-repeat;  
+	background-size: 22px 24px; 
+}
+#widescreen .ui-icon { 
+	background:  url(glyphish-icons/107-widescreen.png) 50% 50% no-repeat;  
+	background-size: 22px 24px; 
+}
+#landscape .ui-icon { 
+	background:  url(glyphish-icons/121-landscape.png) 50% 50% no-repeat;  
+	background-size: 22px 24px; 
+}
 .centerpic {
     display:block;
     margin-left:auto;
@@ -19,4 +59,45 @@
 .about {
     font-size: 100;
 }
-		
+.popup-content {
+	padding: 10px;
+	width: 260px;
+	max-height: 400px;
+}		
+.blog-list-small {
+	max-height: 180px;
+	overflow:auto;
+}
+.blog-list-large {
+	max-height: 280px;
+	overflow: auto;
+}
+.about-button {
+	width: 200px;
+	display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.picture-collection {
+	overflow: auto;
+	white-space: nowrap;
+}
+.popup-picture {
+	width: 295px;
+	background-color:black;
+	display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+.streamviewfield {
+	width:320px;
+}
+.caption {
+	text-align:center;
+}
+.listofblogs {
+	width:320px;
+}
+.add-button {
+	height:30px;
+}

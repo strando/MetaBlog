@@ -34,23 +34,21 @@
 
 	<div data-role="content">	
 			
-			<form action="myblogs.php" id="someform" method="get">
+			<form action="streamview.php" id="someform" method="get">
 				<label>Username: <input class="forminput" type="text" name="username" /></label>
     			<label>Password: <input class="forminput" type="text" name="password" autocapitalize="off" /></label>
 				<input type="submit" value="Log In" />
-			</form>
-			
-			<form action="login.php" id="someform" method="get">
-				<input type="submit" value="Forgot Password?" />
 			</form>
 	
 			<form action="register.php" id="someform" method="get">
 				<input type="submit" value="Register"/>
 			</form>
 			
-			<form action="about-login.php" id="someform" method="get">
-				<input type="submit" value="About Metablog"/>
-			</form>
+			<a href="login.php" data-role="button" data-mini="true" class="about-button">Forgot Password</a>
+
+			
+			<a href="about-login.php" data-role="button" data-mini="true" class="about-button">About Metablog</a>
+
 			
 	</div><!-- /content -->
 	

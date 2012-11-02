@@ -21,36 +21,85 @@
 
 <div data-role="page">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
+		<a href="login.php" data-icon="check" id="logout" class="ui-btn-left">Logout</a>
+
 		<h1>Settings</h1>
-		<a href="login.php" data-icon="check" id="logout" class="ui-btn-right">Logout</a>
 	</div><!-- /header -->
 
 	<div data-role="content">
 	
 		<div data-role="fieldcontain">
-		
-			<div class="explanation">
-				<p>Controls the settings for the app including how to add new blogs, delete blogs, create filters for the stream view, and other functionality that we haven't thought of yet.</p>
-			</div>
-			<form action="#" id="someform" method="get">
-				<input type="submit" value="Add Blog" data-icon="plus"/>
-			</form>
-			<form action="#" id="someform" method="get">
-				<input type="submit" value="Delete Blog" data-icon="minus"/>
-			</form>
-			<form action="#" id="someform" method="get">
-				<input type="submit" value="Manage Filters" data-icon="grid"/>
-			</form>
-			<form action="#" id="someform" method="get">
-				<input type="submit" value="Edit Profile" data-icon="star"/>
-			</form>
+			
+			<a href="#add-blog-popup" data-rel="popup" data-role="button" data-icon="plus" data-transition="pop" data-position-to="window" >Add Blog</a>		
 
+			<a href="#delete-blog-popup" data-rel="popup" data-role="button" data-icon="minus" data-transition="pop" data-position-to="window">Delete Blog</a>		
+
+			<a href="#create-filter-popup" data-rel="popup" data-role="button" data-icon="plus" data-transition="pop" data-position-to="window">Create Filter</a>		
 			
-			<form action="about-settings.php" id="someform" method="get">
-				<input type="submit" value="About Metablog" data-icon="info"/>
-			</form>
+			<a href="#delete-filter-popup" data-rel="popup" data-role="button" data-icon="minus" data-transition="pop" data-position-to="window">Delete Filter</a>		
+
+			<a href="#edit-profile-popup" data-rel="popup" data-role="button" data-icon="info" data-transition="pop" data-position-to="window">Edit Profile</a>		
+	
+			<div data-role="popup" id="add-blog-popup" class="popup-content">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<h3>Add Blog</h3>
+				<label for="blog-name">Enter blog name:</label>
+				<input type="text" name="blog-name" id="blog-name" value=""/>
+				<label for="blog-url">Enter blog url:</label>
+				<input type="text" name="blog-url" id="blog-url" value=""/>
+				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Add Blog</a>
+			</div>
+
+			<div data-role="popup" id="delete-blog-popup" class="popup-content">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<h3>Delete Blog</h3>
+				<div class="blog-list-large">
+					<label><input type="checkbox" name="pushthemovement" /> Push The Movement </label>
+					<label><input type="checkbox" name="everythingyoulovetohate" /> Everything You Love To Hate </label>
+					<label><input type="checkbox" name="thebigpicture" /> The Big Picture </label>
+				</div>
+				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Delete Selected</a>
+			</div>
 			
+			<div data-role="popup" id="create-filter-popup" class="popup-content">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<h2>Create Filter</h2>
+				<label for="blog-name">Enter filter name:</label>
+				<input type="text" name="filter-name" id="filter-name" value=""/>
+				<p>Select blogs to include:</p>
+				<div class="blog-list-small">
+					<label><input type="checkbox" name="pushthemovement" /> Push The Movement </label>
+					<label><input type="checkbox" name="everythingyoulovetohate" /> Everything You Love To Hate </label>
+					<label><input type="checkbox" name="thebigpicture" /> The Big Picture </label>
+				</div>
+				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Create</a>
+			</div>
+			
+			<div data-role="popup" id="delete-filter-popup" class="popup-content">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<h2>Delete Filter</h2>
+				<div class="blog-list-large">
+					<label><input type="checkbox" name="filter-0" /> All Blogs </label>
+					<label><input type="checkbox" name="filter-1" /> Special Filter </label>
+				</div>
+				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Delete Selected</a>
+			</div>
+			
+			<div data-role="popup" id="edit-profile-popup" class="popup-content">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<h2>Edit Profile</h2>
+				<label for="blog-name">Name:</label>
+				<input type="text" name="blog-name" id="blog-name" value="Michael Jordan"/>
+				<label for="blog-url">Email:</label>
+				<input type="text" name="blog-name" id="blog-name" value="airjordan23@nike.com"/>
+				<label for="blog-url">Password:</label>
+				<input type="text" name="blog-name" id="blog-name" value="thebestever"/>
+				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Change Info</a>
+			</div>
+		
+			<a href="about-settings.php" data-role="button" data-mini="true" class="about-button">About Metablog</a>
+
 		</div>	
 	
 	</div><!-- /content -->
@@ -60,27 +109,12 @@
 		<ul>
 			<li><a href="myblogs.php" id="heart" data-icon="custom">My Blogs</a></li>
 			<li><a href="discover.php" id="magnify" data-icon="custom">Discover</a></li>
-			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream View</a></li>
+			<li><a href="streamview.php" id="landscape" data-icon="custom" rel="external">Stream View</a></li>
 			<li><a href="settings.php" id="gear" data-icon="custom" class="ui-btn-active">Settings</a></li>
 		</ul>
 		</div>
 	</div>
-	<script type="text/javascript">
-	$("#logout").hide();
-	$("#info").hide();
-	var retrievedObject = localStorage.getItem('username');
-	if (retrievedObject == "test") {
-		$("#form").hide();	
-		$("#logout").show();
-		$("#info").show();
-	}
-	$("#logout").click(function() {
-		localStorage.removeItem('username');
-		$("#form").show();
-		$("#logout").hide();
-		$("#info").hide();
-	});
-	</script>
+
 </div><!-- /page -->
 
 </body>
