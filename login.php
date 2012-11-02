@@ -34,7 +34,7 @@
 
 	<div data-role="content">	
 			
-			<form action="streamview.php" id="someform" method="get">
+			<form action="myblogs.php" id="someform" method="get">
 				<label>Username: <input class="forminput" type="text" name="username" /></label>
     			<label>Password: <input class="forminput" type="text" name="password" autocapitalize="off" /></label>
 				<input type="submit" value="Log In" />
