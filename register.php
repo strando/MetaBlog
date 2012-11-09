@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="strandsm.png" />
-	<link rel="apple-touch-startup-image" href="strandsm.png">
+	<link rel="apple-touch-startup-image" href="/apple-touch-icon.png"/>
 	
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
@@ -36,9 +36,9 @@
 			
 			<form action="myblogs.php" id="someform" method="get">
 				<label>User Name: <input class="forminput" type="text" name="username" /></label>
-    			<label>Email: <input class="forminput" type="text" name="email" autocapitalize="off" /></label>
-    			<label>Password: <input class="forminput" type="text" name="username" /></label>
-    			<label>Re-enter Password: <input class="forminput" type="text" name="username" /></label>
+    			<label>Email: <input class="forminput" type="email" name="email" autocapitalize="off" /></label>
+    			<label>Password: <input class="forminput" type="password" name="username" /></label>
+    			<label>Re-enter Password: <input class="forminput" type="password" name="username" /></label>
 				<input type="submit" class="medium red awesome" value="Continue" />
 			</form>
 			

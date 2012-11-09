@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="strandsm.png" />
-	<link rel="apple-touch-startup-image" href="strandsm.png">
+	<link rel="apple-touch-startup-image" href="/apple-touch-icon.png"/>
 	
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
@@ -35,9 +35,9 @@
 
 			<a href="#delete-blog-popup" data-rel="popup" data-role="button" data-icon="minus" data-transition="pop" data-position-to="window">Delete Blog</a>		
 
-			<a href="#create-filter-popup" data-rel="popup" data-role="button" data-icon="plus" data-transition="pop" data-position-to="window">Create Filter</a>		
+<!--			<a href="#create-filter-popup" data-rel="popup" data-role="button" data-icon="plus" data-transition="pop" data-position-to="window">Create Filter</a>		
 			
-			<a href="#delete-filter-popup" data-rel="popup" data-role="button" data-icon="minus" data-transition="pop" data-position-to="window">Delete Filter</a>		
+			<a href="#delete-filter-popup" data-rel="popup" data-role="button" data-icon="minus" data-transition="pop" data-position-to="window">Delete Filter</a>		-->
 
 			<a href="#edit-profile-popup" data-rel="popup" data-role="button" data-icon="info" data-transition="pop" data-position-to="window">Edit Profile</a>		
 	
@@ -62,7 +62,7 @@
 				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Delete Selected</a>
 			</div>
 			
-			<div data-role="popup" id="create-filter-popup" class="popup-content">
+<!--			<div data-role="popup" id="create-filter-popup" class="popup-content">
 				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 				<h2>Create Filter</h2>
 				<label for="blog-name">Enter filter name:</label>
@@ -84,7 +84,7 @@
 					<label><input type="checkbox" name="filter-1" /> Special Filter </label>
 				</div>
 				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Delete Selected</a>
-			</div>
+			</div>  -->
 			
 			<div data-role="popup" id="edit-profile-popup" class="popup-content">
 				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
@@ -109,7 +109,7 @@
 		<ul>
 			<li><a href="myblogs.php" id="heart" data-icon="custom">My Blogs</a></li>
 			<li><a href="discover.php" id="magnify" data-icon="custom">Discover</a></li>
-			<li><a href="streamview.php" id="landscape" data-icon="custom" rel="external">Stream View</a></li>
+			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream View</a></li>
 			<li><a href="settings.php" id="gear" data-icon="custom" class="ui-btn-active">Settings</a></li>
 		</ul>
 		</div>

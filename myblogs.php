@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="strandsm.png" >
-	<link rel="apple-touch-startup-image" href="startup.png">
+	<link rel="apple-touch-startup-image" href="/apple-touch-icon.png"/>
 
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
@@ -48,131 +48,45 @@
 
 	<div data-role="content">
 		
-		<div data-role="fieldcontain">
+			<?php
+				$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
+				if (!$con)
+				{
+					die('Could not connect: ' . mysql_error());
+				}
+ 				mysql_select_db("c_cs147_strand14", $con);
+				$query = "SELECT * FROM myblogs";
+				$result = mysql_query($query);
+				
+				while ($row = mysql_fetch_assoc($result)) {
+					$photocount = 0;
+					$popupcount = 0;
+					$numphotos = $row["numphotos"];
+					$blogurl = $row["url"];
+					$blogname = $row["name"];
+					echo "<div data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='arrow-d' data-iconpos='right'>
+		   				<h3>".$blogname."</h3>
+		   				<div class='picture-collection'>";
+		   			while ($photocount < $numphotos) {
+		   				$popupid = $blogname.'popup'.$photocount;
+		   				$photoid = $blogname.'small'.$photocount;
 
-			
-			<!-- on screen collapsibles -->
-
-			<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
-		   		<h3>PushTheMovement</h3>
-		   		<div class="picture-collection">
-		   			<a href="#p1Popup" data-rel="popup" id="p1small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p1small.jpg"/></a>
-		   			<a href="#p2Popup" data-rel="popup" id="p2small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p2small.jpg"/></a>
-		   			<a href="#p3Popup" data-rel="popup" id="p3small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p3small.jpg"/></a>
-		   			<a href="#p4Popup" data-rel="popup" id="p4small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p4small.jpg"/></a>
-		   			<a href="#p5Popup" data-rel="popup" id="p5small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p5small.jpg"/></a>
-		   			<a href="#p6Popup" data-rel="popup" id="p6small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p6small.jpg"/></a>
-		   			<a href="#p7Popup" data-rel="popup" id="p7small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p7small.jpg"/></a>
-		   			<a href="#p8Popup" data-rel="popup" id="p8small" data-transition="pop" data-position-to="window"><img src="pushthemovement/p8small.png"/></a>
-				</div>
-			</div>					
-			<div data-role="popup" id="p1Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p1large.jpg"/>
-			</div>				
-			<div data-role="popup" id="p2Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p2large.jpg"/>
-			</div>	
-			<div data-role="popup" id="p3Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p3large.jpg"/>
-			</div>				
-			<div data-role="popup" id="p4Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p4large.jpg"/>
-			</div>	
-			<div data-role="popup" id="p5Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p5large.jpg"/>
-			</div>	
-			<div data-role="popup" id="p6Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p6large.jpg"/>
-			</div>	
-			<div data-role="popup" id="p7Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p7large.jpg"/>
-			</div>	
-			<div data-role="popup" id="p8Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="pushthemovement/p8large.png"/>
-			</div>	
-			
-			<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
-		   		<h3>EverythingYouLoveToHate</h3>
-		   		<div class="picture-collection">
-		   			<a href="#e1Popup" data-rel="popup" id="e1small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e1small.jpg"/></a>
-		   			<a href="#e2Popup" data-rel="popup" id="e2small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e2small.jpeg"/></a>
-		   			<a href="#e3Popup" data-rel="popup" id="e3small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e3small.jpg"/></a>
-		   			<a href="#e4Popup" data-rel="popup" id="e4small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e4small.jpeg"/></a>
-		   			<a href="#e5Popup" data-rel="popup" id="e5small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e5small.jpg"/></a>
-		   			<a href="#e6Popup" data-rel="popup" id="e6small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e6small.jpeg"/></a>
-		   			<a href="#e7Popup" data-rel="popup" id="e7small" data-transition="pop" data-position-to="window"><img src="everythingyoulovetohate/e7small.jpg"/></a>
-				</div>
-			</div>					
-			<div data-role="popup" id="e1Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e1large.jpg"/>
-			</div>				
-			<div data-role="popup" id="e2Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e2large.jpg"/>
-			</div>	
-			<div data-role="popup" id="e3Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e3large.jpg"/>
-			</div>				
-			<div data-role="popup" id="e4Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e4large.jpg"/>
-			</div>	
-			<div data-role="popup" id="e5Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e5large.jpg"/>
-			</div>	
-			<div data-role="popup" id="e6Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e6large.jpg"/>
-			</div>	
-			<div data-role="popup" id="e7Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="everythingyoulovetohate/e7large.jpg"/>
-			</div>		
+		   				echo "<a href='#".$popupid."' data-rel='popup' data-transition='pop' data-position-to='window'><img src=".$blogurl.$photocount." class='smallpic'/></a>"; 
+		   				$photocount++;
+		   			}
+					echo "</div></div>";
 						
-			<div data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
-		   		<h3>TheBigPicture</h3>
-		   		<div class="picture-collection">
-		   			<a href="#bigpic1Popup" data-rel="popup" id="bigpic1small" data-transition="pop" data-position-to="window"><img src="thebigpicture/bigpic1small.jpeg"/></a>
-		   			<a href="#bigpic2Popup" data-rel="popup" id="bigpic2small" data-transition="pop" data-position-to="window"><img src="thebigpicture/bigpic2small.jpeg"/></a>
-		   			<a href="#bigpic3Popup" data-rel="popup" id="bigpic3small" data-transition="pop" data-position-to="window"><img src="thebigpicture/bigpic3small.jpeg"/></a>
-		   			<a href="#bigpic4Popup" data-rel="popup" id="bigpic4small" data-transition="pop" data-position-to="window"><img src="thebigpicture/bigpic4small.jpeg"/></a>
-		   			<a href="#bigpic5Popup" data-rel="popup" id="bigpic5small" data-transition="pop" data-position-to="window"><img src="thebigpicture/bigpic5small.jpeg"/></a>
-				</div>
-			</div>					
-			<div data-role="popup" id="bigpic1Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="thebigpicture/bigpic1large.jpeg"/>
-			</div>				
-			<div data-role="popup" id="bigpic2Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="thebigpicture/bigpic2large.jpeg"/>
-			</div>				
-			<div data-role="popup" id="bigpic3Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="thebigpicture/bigpic3large.jpeg"/>
-			</div>				
-			<div data-role="popup" id="bigpic4Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="thebigpicture/bigpic4large.jpeg"/>
-			</div>				
-			<div data-role="popup" id="bigpic5Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="thebigpicture/bigpic5large.jpeg"/>
-			</div>	
-
-		</div>
-					
+					while ($popupcount < $numphotos) {
+						$popupid = $blogname.'popup'.$popupcount;
+						echo "<div data-role='popup' id='".$popupid."' class='popup-picture' data-theme='a'>
+							<a href='#' data-rel='back' data-role='button' data-theme='a' data-icon='delete' data-iconpos='notext' class='ui-btn-right'>Close</a>
+							<img src=".$blogurl.$popupcount." class='largepic'/>
+							</div>";
+						$popupcount++;
+					}
+				}
+			?>
+			
 	</div><!-- /content -->
 
    
@@ -181,7 +95,7 @@
 		<ul>
 			<li><a href="myblogs.php" id="heart" data-icon="custom" class="ui-btn-active">My Blogs</a></li>
 			<li><a href="discover.php" id="magnify" data-icon="custom">Discover</a></li>
-			<li><a href="streamview.php" id="landscape" data-icon="custom" data-ajax="false">Stream View</a></li>
+			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream View</a></li>
 			<li><a href="settings.php" id="gear" data-icon="custom">Settings</a></li>
 		</ul>
 		</div>
