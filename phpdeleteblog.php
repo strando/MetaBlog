@@ -15,16 +15,13 @@ session_start();
 	 mysql_select_db("c_cs147_strand14", $con); 
 
 	
-	$name=$_POST["blog-name"];
+	$name=$_POST["delete-group"];
 	$username=$_SESSION["user"];
-	
-	echo $name;
-	echo $username;
-	
-	$sql= "DELETE FROM associations WHERE username='$username' AND nickname='$name'";
+		
+	$sql= "DELETE FROM associations WHERE username='$username' AND url='$name'";
 	$retval=mysql_query($sql, $con);
 	$returnurl = 'settings.php';
-   	echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$returnurl.'">';
+  	echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$returnurl.'">';
 	
 	?>
 	

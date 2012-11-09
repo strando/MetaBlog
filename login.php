@@ -35,7 +35,25 @@
 	<div data-role="content">	
 	
 			<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
-				<h2>New User</h2>
+				<h2>Login</h2>
+				<form action="phplogin.php" id="someform" method="post">
+				
+					<label for="username" class="ui-hidden-accessible">Username:</label>
+					<input class="forminput" type="text" name="username" id="username" placeholder="Username" autocapitalize="off"/>
+					
+					<label for="password" class="ui-hidden-accessible">Password:</label>
+					<input class="forminput" type="password" name="password" id="password" placeholder="Password" autocapitalize="off"/>
+				
+					<input type="submit" value="Go!" />
+					
+				</form>
+	
+			
+<!--				<a href="#" data-role="button" data-mini="true" class="about-button">Forgot Password</a> -->
+			</div>	
+	
+			<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
+				<h2>Are you new to Metablog?</h2>
 				<div data-type="field-contain">
 				<form action="phpregister.php" id="someform" method="post">
 					
@@ -48,30 +66,18 @@
 					<label for="reenter-password" class="ui-hidden-accessible">Password:</label>
 					<input class="forminput" type="password" name="reenter-password" id="reenter-password" placeholder="Re-enter Password" autocapitalize="off"/>
 				
-					<input type="submit" value="Register" />
+					<input type="submit" value="Register!" />
 				</form>
 				</div>
 			</div>
-					
-			<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
-				<h2>Already Registered</h2>
-				<form action="phplogin.php" id="someform" method="post">
-				
-					<label for="username" class="ui-hidden-accessible">Username:</label>
-					<input class="forminput" type="text" name="username" id="username" placeholder="Username" autocapitalize="off"/>
-					
-					<label for="password" class="ui-hidden-accessible">Password:</label>
-					<input class="forminput" type="password" name="password" id="password" placeholder="Password" autocapitalize="off"/>
-				
-					<input type="submit" value="Log In" />
-					
-				</form>
-	
 			
-<!--				<a href="#" data-role="button" data-mini="true" class="about-button">Forgot Password</a> -->
-			</div>	
-			
-			<a href="about-login.php" data-role="button" data-mini="true" class="about-button">About Metablog</a>
+			<a href="#aboutPopup" data-rel="popup" data-role="button" data-mini="true" class="about-button" data-transition="pop">About Metablog</a>		
+								
+			<div data-role="popup" id="aboutPopup" class="popup-picture" data-theme="a">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<h1 class="about">About The App</h1>
+				<p>MetaBlog is a smooth and seamless way to quickly view and organize all your favorite photo blogs. Just type in the urls of the photo blogs you've been following, and MetaBlog will automatically update all of them - in one spot. We're building MetaBlog to allow you to connect with your content on the go. It's like a blog... within a blog!</p>
+			</div>				
 
 			
 	</div><!-- /content -->

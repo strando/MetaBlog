@@ -197,10 +197,10 @@ session_start();
     <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
 		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
 		<ul>
-			<li><a href="myblogs.php" id="heart" data-icon="custom">My Blogs</a></li>
+			<li><a href="myblogs.php" id="heart" data-icon="custom">Blogs</a></li>
 			<li><a href="discover.php" id="magnify" data-icon="custom" class="ui-btn-active">Discover</a></li>
-			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream View</a></li>
-			<li><a href="settings.php" id="gear" data-icon="custom">Settings</a></li>
+			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream</a></li>
+			<li><a href="settings.php" id="gear" data-icon="custom">Manage</a></li>
 		</ul>
 		</div>
 	</div>

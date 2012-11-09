@@ -19,14 +19,6 @@ session_start();
 	
 	 $name=$_POST["username"];
 	 $password=$_POST["password"];
-	 
-
-//	 echo "hi";
-//	 echo "$name";
-//	 echo "$password";
-	 
-	 $data = mysql_query("SELECT * FROM accounts") 
-	 or die(mysql_error());
 	
 	$sql = "SELECT * FROM accounts WHERE username='$name' and password='$password'";
 	
@@ -35,19 +27,22 @@ session_start();
 	
 	
 	$count = mysql_num_rows($result);
-	
-	  echo "$count";
-	
-	
+		  
 	if($count==1){
 // Register $myusername, $mypassword and redirect to file \"login_success.php\"
 		$_SESSION['user']=$name;
 		echo "The user logged in is ".$_SESSION['user'];
 		$url = 'myblogs.php';
-   		echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">'; 
+		echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">'; 
+
 	} else {
-		echo "that user was not identified";
+		echo "<script type='text/javascript'>
+window.alert('Incorrect username/password combination. Try again please!')
+</script>";	
+		$url = 'login.php';
+		echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">'; 
 	}
+
 	?>
 	
 </body>
