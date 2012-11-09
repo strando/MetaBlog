@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html> 
 <html>
 
@@ -55,36 +59,46 @@
 					die('Could not connect: ' . mysql_error());
 				}
  				mysql_select_db("c_cs147_strand14", $con);
-				$query = "SELECT * FROM myblogs";
-				$result = mysql_query($query);
-				
-				while ($row = mysql_fetch_assoc($result)) {
-					$photocount = 0;
-					$popupcount = 0;
-					$numphotos = $row["numphotos"];
-					$blogurl = $row["url"];
-					$blogname = $row["name"];
-					echo "<div data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='arrow-d' data-iconpos='right'>
-		   				<h3>".$blogname."</h3>
-		   				<div class='picture-collection'>";
-		   			while ($photocount < $numphotos) {
-		   				$popupid = $blogname.'popup'.$photocount;
-		   				$photoid = $blogname.'small'.$photocount;
-
-		   				echo "<a href='#".$popupid."' data-rel='popup' data-transition='pop' data-position-to='window'><img src=".$blogurl.$photocount." class='smallpic'/></a>"; 
-		   				$photocount++;
-		   			}
-					echo "</div></div>";
-						
-					while ($popupcount < $numphotos) {
-						$popupid = $blogname.'popup'.$popupcount;
-						echo "<div data-role='popup' id='".$popupid."' class='popup-picture' data-theme='a'>
-							<a href='#' data-rel='back' data-role='button' data-theme='a' data-icon='delete' data-iconpos='notext' class='ui-btn-right'>Close</a>
-							<img src=".$blogurl.$popupcount." class='largepic'/>
-							</div>";
-						$popupcount++;
-					}
-				}
+ 				$query = "SELECT * FROM associations";
+ 				$result = mysql_query($query);
+ 				
+ 				while ($row = mysql_fetch_assoc($result)) {
+ 					$username = $row["username"];
+ 					$url = $row["url"];
+ 					$currentuser = $_SESSION["user"]; 					
+ 					if ($username = $currentuser) {
+ 						$newquery = "SELECT * FROM allblogs WHERE url = '$url'";
+ 						$newresult = mysql_query($newquery);	
+ 						while ($newrow = mysql_fetch_assoc($newresult)) {
+							$photocount = 0;
+							$popupcount = 0;
+							$numphotos = $newrow["numphotos"];
+							$blogurl = $newrow["url"];
+							$blogname = $newrow["name"];
+							echo "<div data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='arrow-d' data-iconpos='right'>
+				   				<h3>".$blogname."</h3>
+				   				<div class='picture-collection'>";
+				   			while ($photocount < $numphotos) {
+				   				$popupid = $blogname.'popup'.$photocount;
+				   				$photoid = $blogname.'small'.$photocount;
+		
+				   				echo "<a href='#".$popupid."' data-rel='popup' data-transition='pop' data-position-to='window'><img src=".$blogurl.$photocount." class='smallpic'/></a>"; 
+				   				$photocount++;
+				   			}
+							echo "</div></div>";
+								
+							while ($popupcount < $numphotos) {
+								$popupid = $blogname.'popup'.$popupcount;
+								echo "<div data-role='popup' id='".$popupid."' class='popup-picture' data-theme='a'>
+									<a href='#' data-rel='back' data-role='button' data-theme='a' data-icon='delete' data-iconpos='notext' class='ui-btn-right'>Close</a>
+									<img src=".$blogurl.$popupcount." class='largepic'/>
+									</div>";
+								$popupcount++;
+							}
+ 						}
+ 					}
+ 				}
+ 				
 			?>
 			
 	</div><!-- /content -->

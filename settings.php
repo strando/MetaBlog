@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html> 
 <html>
 
@@ -29,11 +33,28 @@
 
 	<div data-role="content">
 	
-		<div data-role="fieldcontain">
 			
-			<a href="#add-blog-popup" data-rel="popup" data-role="button" data-icon="plus" data-transition="pop" data-position-to="window" >Add Blog</a>		
+			<div data-role="collapsible" id="add-blog" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+				<h3>Add Blog</h3>
 
-			<a href="#delete-blog-popup" data-rel="popup" data-role="button" data-icon="minus" data-transition="pop" data-position-to="window">Delete Blog</a>		
+				<form action="phpaddblog.php" id="someform" method="post">
+
+					<label for="blog-url">Enter blog url:</label>
+					<input class="forminput" type="text" name="blog-url" id="blog-url" value=""/>
+					<input type="submit" value="Add Blog"/>
+				
+				</form>
+			</div>
+
+			<div data-role="collapsible" id="delete-blog-popup" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
+				<h3>Delete Blog</h3>
+				
+				<form action="phpdeleteblog.php" id="someform" method="post">
+					<label for="blog-name">Enter blog name:</label>
+					<input class="forminput" type="text" name="blog-name" id="blog-name" value=""/>
+					<input type="submit" value="Delete Blog"/>
+				</form>
+			</div>	
 
 <!--			<a href="#create-filter-popup" data-rel="popup" data-role="button" data-icon="plus" data-transition="pop" data-position-to="window">Create Filter</a>		
 			
@@ -41,26 +62,9 @@
 
 			<a href="#edit-profile-popup" data-rel="popup" data-role="button" data-icon="info" data-transition="pop" data-position-to="window">Edit Profile</a>		
 	
-			<div data-role="popup" id="add-blog-popup" class="popup-content">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<h3>Add Blog</h3>
-				<label for="blog-name">Enter blog name:</label>
-				<input type="text" name="blog-name" id="blog-name" value=""/>
-				<label for="blog-url">Enter blog url:</label>
-				<input type="text" name="blog-url" id="blog-url" value=""/>
-				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Add Blog</a>
-			</div>
 
-			<div data-role="popup" id="delete-blog-popup" class="popup-content">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<h3>Delete Blog</h3>
-				<div class="blog-list-large">
-					<label><input type="checkbox" name="pushthemovement" /> Push The Movement </label>
-					<label><input type="checkbox" name="everythingyoulovetohate" /> Everything You Love To Hate </label>
-					<label><input type="checkbox" name="thebigpicture" /> The Big Picture </label>
-				</div>
-				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Delete Selected</a>
-			</div>
+
+
 			
 <!--			<div data-role="popup" id="create-filter-popup" class="popup-content">
 				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
@@ -100,7 +104,6 @@
 		
 			<a href="about-settings.php" data-role="button" data-mini="true" class="about-button">About Metablog</a>
 
-		</div>	
 	
 	</div><!-- /content -->
 

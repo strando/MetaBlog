@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html> 
 <html>
 <head>
@@ -36,7 +39,7 @@
 	$retval=mysql_query($sql, $con);
 	echo "$sql";
 	$url = 'myblogs.php';
-   	cho '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
+   	echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">';
 	 ?>
 
 	
