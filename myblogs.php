@@ -14,8 +14,8 @@ session_start();
 
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet" href="style.css" />
-	<link rel="apple-touch-icon" href="strandsm.png" >
-	<link rel="apple-touch-startup-image" href="/apple-touch-icon.png"/>
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png"/>
 
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
@@ -55,6 +55,8 @@ session_start();
 
 	<div data-role="content">
 		
+		<ul data-role="listview" data-filter="true">
+
 			<?php
 				$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
 				if (!$con)
@@ -75,7 +77,7 @@ session_start();
 						$numphotos = $newrow["numphotos"];
 						$blogurl = $newrow["url"];
 						$blogname = $newrow["name"];
-						echo "<div data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='arrow-d' data-iconpos='right'>
+						echo "<li data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='arrow-d' data-iconpos='right'>
 				   			<h3>".$blogname."</h3>
 				   			<div class='picture-collection'>";
 						while ($photocount < $numphotos) {
@@ -85,7 +87,7 @@ session_start();
 				   			echo "<a href='#".$popupid."' data-rel='popup' data-transition='pop' data-position-to='window'><img src=".$blogurl.$photocount." class='smallpic'/></a>"; 
 				   				$photocount++;
 				   		}
-						echo "</div></div>";
+						echo "</div></li>";
 								
 						while ($popupcount < $numphotos) {
 							$popupid = $blogname.'popup'.$popupcount;
@@ -99,6 +101,8 @@ session_start();
  				}
  				
 			?>
+			
+		</ul>
 			
 	</div><!-- /content -->
 

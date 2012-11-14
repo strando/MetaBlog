@@ -33,164 +33,38 @@ session_start();
 
 	<div data-role="content">
 	
-		<div data-role="fieldcontain">
-		
-		<ul data-role="listview" data-filter="true">
-			<li data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-iconpos="right">
-		   		<h3>Animals</h3>
-		  		<div class="picture-collection">
-		 			<a href="#a1Popup" data-rel="popup" id="a1small" data-transition="pop" data-position-to="window"><img src="animals/a1.jpeg" class="smallpic"/></a>
-		   			<a href="#a2Popup" data-rel="popup" id="a2small" data-transition="pop" data-position-to="window"><img src="animals/a2.jpeg" class="smallpic"/></a>
-		   			<a href="#a3Popup" data-rel="popup" id="a3small" data-transition="pop" data-position-to="window"><img src="animals/a3.jpeg" class="smallpic"/></a>
-		   			<a href="#a4Popup" data-rel="popup" id="a4small" data-transition="pop" data-position-to="window"><img src="animals/a4.jpeg" class="smallpic"/></a>
-				</div>
-			</li>
-			<li data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-iconpos="right">
-		   		<h3>Cars</h3>
-		   		<div class="picture-collection">
-		   			<a href="#car1Popup" data-rel="popup" id="car1-small" data-transition="pop" data-position-to="window"><img src="cars/car1-small.jpeg"/></a>
-		   			<a href="#car2Popup" data-rel="popup" id="car2-small" data-transition="pop" data-position-to="window"><img src="cars/car2-small.jpeg"/></a>
-	 				<a href="#car3Popup" data-rel="popup" id="car3-small" data-transition="pop" data-position-to="window"><img src="cars/car3-small.jpeg"/></a>
-	   				<a href="#car4Popup" data-rel="popup" id="car4-small" data-transition="pop" data-position-to="window"><img src="cars/car4-small.jpeg"/></a>
-		   			<a href="#car5Popup" data-rel="popup" id="car5-small" data-transition="pop" data-position-to="window"><img src="cars/car5-small.jpeg"/></a>
-		   			<a href="#car6Popup" data-rel="popup" id="car6-small" data-transition="pop" data-position-to="window"><img src="cars/car6-small.jpeg"/></a>
-				</div>
-			</li>
-			<li data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-iconpos="right">
-		   		<h3>Calvin and Hobbes</h3>
-				<div class="picture-collection">
-	   				<a href="#ch0Popup" data-rel="popup" id="ch0small" data-transition="pop" data-position-to="window"><img src="calvinandhobbes/ch0.jpg"/></a>
-		   			<a href="#ch1Popup" data-rel="popup" id="ch1small" data-transition="pop" data-position-to="window"><img src="calvinandhobbes/ch1.jpg"/></a>
-		   			<a href="#ch3Popup" data-rel="popup" id="ch3small" data-transition="pop" data-position-to="window"><img src="calvinandhobbes/ch3.jpg"/></a>
-		   			<a href="#ch7Popup" data-rel="popup" id="ch7small" data-transition="pop" data-position-to="window"><img src="calvinandhobbes/ch7.jpg"/></a>
-		  			<a href="#ch8Popup" data-rel="popup" id="ch8small" data-transition="pop" data-position-to="window"><img src="calvinandhobbes/ch8.jpg"/></a>
-				</div>
-			</li>
-			<li data-role="collapsible" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-iconpos="right">
-		   		<h3>Design</h3>
-		   		<div class="picture-collection">
-		   			<a href="#design2Popup" data-rel="popup" id="design2small" data-transition="pop" data-position-to="window"><img src="design/design2small.jpg"/></a>
-		   			<a href="#design4Popup" data-rel="popup" id="design4small" data-transition="pop" data-position-to="window"><img src="design/design4small.jpg"/></a>
-	   				<a href="#design5Popup" data-rel="popup" id="design5small" data-transition="pop" data-position-to="window"><img src="design/design5small.jpg"/></a>
-	   				<a href="#design6Popup" data-rel="popup" id="design6small" data-transition="pop" data-position-to="window"><img src="design/design6small.jpg"/></a>
-		   			<a href="#design9Popup" data-rel="popup" id="design9small" data-transition="pop" data-position-to="window"><img src="design/design9small.jpg"/></a>
-				</div>
-			</li>
-		</ul>		
-		
-								
-			<div data-role="popup" id="a1Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="animals/a1.jpeg" class="largepic"/>
-				<p class="caption">weirdanimals.tumblr.com</p>
-			</div>				
-			<div data-role="popup" id="a2Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="animals/a2.jpeg" class="largepic"/>
-				<p class="caption">sleepinganimals.tumblr.com</p>
-			</div>	
-			<div data-role="popup" id="a3Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="animals/a3.jpeg" class="largepic"/>
-				<p class="caption">cats.com</p>
-			</div>				
-			<div data-role="popup" id="a4Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="animals/a4.jpeg" class="largepic"/>
-				<p class="caption">weirdanimals.tumblr.com</p>
-			</div>
-			<div data-role="popup" id="car1Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="cars/car1-full.jpeg" class="largepic"/>
-				<p class="caption">oldcars.blogspot.com</p>
-			</div>			
-			<div data-role="popup" id="car2Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="cars/car2-full.jpeg" class="largepic"/>
-				<p class="caption">oldcars.blogspot.com</p>
-			</div>	
-			<div data-role="popup" id="car3Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="cars/car3-full.jpeg" class="largepic"/>
-				<p class="caption">greenthings.tumblr.com</p>
-			</div>	
-			<div data-role="popup" id="car4Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="cars/car4-full.jpeg" class="largepic"/>
-				<p class="caption">carsilike.com</p>
-			</div>	
-			<div data-role="popup" id="car5Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="cars/car5-full.jpeg" class="largepic"/>
-				<p class="caption">oldcars.blogspot.com</p>
-			</div>	
-			<div data-role="popup" id="car6Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="cars/car6-full.jpeg" class="largepic"/>
-				<p class="caption">thingsiwishihad.tumblr.com</p>
-			</div>	
-			<div data-role="popup" id="ch0Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="calvinandhobbes/ch0.jpg" class="largepic"/>
-				<p class="caption">calvinandhobbes.blogspot.com</p>
-			</div>				
-			<div data-role="popup" id="ch1Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="calvinandhobbes/ch1.jpg" class="largepic"/>
-				<p class="caption">calvinandhobbes.blogspot.com</p>
-			</div>	
-			<div data-role="popup" id="ch3Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="calvinandhobbes/ch3.jpg" class="largepic"/>
-				<p class="caption">hobbesistheking.tumblr.com</p>
-			</div>				
-			<div data-role="popup" id="ch7Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="calvinandhobbes/ch7.jpg" class="largepic"/>
-				<p class="caption">calvinistheking.blogspot.com</p>
-			</div>	
-			<div data-role="popup" id="ch8Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="calvinandhobbes/ch8.jpg" class="largepic"/>
-				<p class="caption">hobbesistheking.tumblr.com</p>
-			</div>			
-			<div data-role="popup" id="design2Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="design/design2large.jpg" class="largepic"/>
-				<p class="caption">weirdbuidlings.tumblr.com</p>
-			</div>			
-			<div data-role="popup" id="design4Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="design/design4large.jpg" class="largepic"/>
-				<p class="caption">goldengatebridge.blogspot.com</p>
-			</div>	
-			<div data-role="popup" id="design5Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="design/design5large.jpg" class="largepic"/>
-				<p class="caption">weirdbuidlings.tumblr.com</p>
-			</div>	
-			<div data-role="popup" id="design6Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="design/design6large.jpg" class="largepic"/>
-				<p class="caption">abstractdesign.com</p>
-			</div>	
-			<div data-role="popup" id="design9Popup" class="popup-picture" data-theme="a">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<img src="design/design9large.jpg" class="largepic"/>
-				<p class="caption">weirdstatues.com</p>
-			</div>	
+		<a href="discover.php" data-role="button" data-icon="search" data-ajax="false" data-iconpos='right'>See New Photo!</a>
+	
+		<?php
+			$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
+			if (!$con) {
+				die('Could not connect: ' . mysql_error());
+			}
+			mysql_select_db("c_cs147_strand14", $con);
+			$currentuser = $_SESSION["user"]; 		
+						
+			$query = "SELECT * FROM allblogs";
+			$result = mysql_query($query);
+			$count = mysql_num_rows($result);
+			$index = rand(1, $count);
+			$photoindex = rand(0, 9);			
+	
+			for ($i = 0; $i < $index; $i ++) {
+				$row = mysql_fetch_array($result);
+			}
+				
 			
-			<div data-role="popup" id="adda1Popup" class="popup-content">
-				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-				<h3>Add Blog</h3>
-				<label for="blog-name">Enter blog name:</label>
-				<input type="text" name="blog-name" id="blog-name" value="Cool Animals"/>
-				<label for="blog-url">Enter blog url:</label>
-				<input type="text" name="blog-url" id="blog-url" value="coolanimals.tumblr.com"/>
-				<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Add Blog</a>
-			</div>
-		</div>
+			$url = $row["url"];
 			
+			echo "<img src=".$url.$photoindex." class='largepic'/>"; 
+
+			
+			echo "<form action='phpaddblog2.php' id='someform' method='post'>
+				<input type='submit' name='blog-url' id='blog-url' value='".$url."' data-icon='plus' data-iconpos='right'/>
+				</form>";
+				
+		?>
+					
 	
 	</div><!-- /content -->
 

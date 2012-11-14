@@ -117,3 +117,11 @@
 .about {
 	text-align: center;
 }
+.discover-header {
+	text-align: center;
+	max-width:320px;
+}
+.delete-container {
+	height: 150px;
+	overflow: scroll;
+}

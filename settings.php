@@ -14,8 +14,8 @@ session_start();
 
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
 	<link rel="stylesheet" href="style.css" />
-	<link rel="apple-touch-icon" href="strandsm.png" />
-	<link rel="apple-touch-startup-image" href="/apple-touch-icon.png"/>
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png"/>
 	
 	<script src="jquery-1.8.2.min.js"></script>
 	<script src="jquery.mobile-1.2.0.js"></script>
@@ -46,9 +46,10 @@ session_start();
 
 			<div data-role="collapsible" id="delete-blog-popup" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">
 				<h3>Delete Blog</h3>
-				
 				<form action="phpdeleteblog.php" id="someform" method="post">
 					<legend>Choose blog to delete:</legend>
+					<div class="delete-container">
+
 					<?php
 						$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
 						if (!$con)
@@ -69,6 +70,8 @@ session_start();
 		 					}
 		 				}
 		 			?>
+		 			</div>
+
 					<input type="submit" value="Delete Blog"/>
 				</form>
 				
