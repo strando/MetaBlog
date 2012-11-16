@@ -23,9 +23,7 @@ session_start();
 	$sql = "SELECT * FROM accounts WHERE username='$name' and password='$password'";
 	
 	$result = mysql_query($sql);
-	
-	
-	
+
 	$count = mysql_num_rows($result);
 		  
 	if($count==1){

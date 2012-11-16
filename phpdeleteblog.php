@@ -20,6 +20,11 @@ session_start();
 		
 	$sql= "DELETE FROM associations WHERE username='$username' AND url='$name'";
 	$retval=mysql_query($sql, $con);
+	
+	echo "<script type='text/javascript'>
+window.alert('Blog Deleted!')
+</script>";	
+	
 	$returnurl = 'settings.php';
   	echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$returnurl.'">';
 	

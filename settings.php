@@ -38,9 +38,24 @@ session_start();
 				<h3>Add Blog</h3>
 
 				<form action="phpaddblog.php" id="someform" method="post">
-					<label for="blog-url">Enter blog url:</label>
-					<input class="forminput" type="text" name="blog-url" id="blog-url" value=""/>
+					
+					<label for="blog-url" class="select">Enter blog url:</label>
+					<select name="blog-url" id="blog-url" data-mini="true">
+						<option value="">--Select Blog To Add--</option>
+					   <option value="www.boston.com/bigpicture/">boston.com/bigpicture</option>
+					   <option value="pushthemovement.tumblr.com/">pushthemovement.tumblr.com</option>
+					   <option value="theoccasionaloddcrop.tumblr.com/">theoccasionaloddcrop.tumblr.com</option>
+					   <option value="alakija.shutterchance.com/">alakija.shutterchance.com</option>
+					   <option value="wvs.topleftpixel.com/">wvs.topleftpixel.com</option>
+					   <option value="everythingyoulovetohate.tumblr.com/">everythingyoulovetohate.tumblr.com</option>
+					   <option value="www.cazurro.com/">cazurro.com</option>
+					   <option value="www.deceptivemedia.co.uk/">deceptivemedia.co.uk</option>
+					   <option value="www.positive-negative.com/">positive-negative.com</option>
+					   <option value="chromogenic.net/">chromogenic.net</option>
+					</select> 
+					
 					<input type="submit" value="Add Blog"/>
+
 				</form>
 			</div>
 

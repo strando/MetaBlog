@@ -67,6 +67,10 @@ session_start();
  				$currentuser = $_SESSION["user"]; 					
  				$query = "SELECT * FROM associations WHERE username='$currentuser'";
  				$result = mysql_query($query);
+ 				$count = mysql_num_rows($result);
+			if ($count == 0) {
+ 					echo "<div style='max-width: 300px;'><p style='text-align: center;'><b>Welcome to MetaBlog!<b><br>MetaBlog is an app made to quickly view and <br>organize all of your favorite photo blogs.<br><b>Blogs<b> (the page you are currently on) is where you <br> can view photos from all the blogs you want to follow.<br><b>Discover<b> is where you can find new content.<br><b>Stream<b> mixes all of the photos from your blogs <br> together in a full screen display.<br> Finally, <b>Manage<b> is where you can add and delete<br> blogs.<br> Enjoy!<p></div>";
+ 				}
  				while ($row = mysql_fetch_assoc($result)) {
  					$url = $row["url"];
  					$newquery = "SELECT * FROM allblogs WHERE url = '$url'";
