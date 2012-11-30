@@ -29,7 +29,6 @@ session_start();
 	if($count==1){
 // Register $myusername, $mypassword and redirect to file \"login_success.php\"
 		$_SESSION['user']=$name;
-		echo "The user logged in is ".$_SESSION['user'];
 		$url = 'myblogs.php';
 		echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">'; 
 

@@ -90,13 +90,79 @@
     margin-right:auto;
 }
 .streamviewfield {
-	width:320px;
+	max-width: 290px;
+}
+.streamcontainer0, .streamcontainer1, .streamcontainer2, .streamcontainer3, .streamcontainer4, .streamcontainer5 {
+	overflow: hidden;
+	padding: 2.5px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.streampic0, .streampic1, .streampic2, .streampic3, .streampic4, .streampic5 {
+	display: table-cell;
+	vertical-align: middle;
+}
+.streamcontainer0 {
+	width: 130px;
+	height: 150px;
+	float: left;
+}
+.streamcontainer3 {
+	width: 130px;
+	height: 130px;
+	float: left;
+}
+.streamcontainer1 {
+	width: 150px;
+	height: 120px;
+	float: left;
+}
+.streamcontainer2 {
+	width: 150px;
+	height: 160px;
+	float: right;
+}
+.streamcontainer4 {
+	width: 105px;
+	height: 175px;
+	float: left;
+}
+.streamcontainer5 {
+	width: 175px;
+	height: 175px;
+	float: right
+}
+.streampic0 {
+	height: 150px;
+	min-width: 130px;
+}
+.streampic1 {
+	width: 150px;
+	min-height: 120px;
+}
+.streampic2 {
+	height: 160px;
+	min-width: 150px;
+}
+.streampic3 {
+	width: 130px;
+	min-height: 130px;
+}
+.streampic4 {
+	height: 175px;
+	min-width: 105px;
+}
+.streampic5 {
+	width: 175px;
+	min-height: 175px
 }
 .caption {
 	text-align:center;
 }
 .listofblogs {
 	width:320px;
+	text-align: center;
 }
 .add-button {
 	height:30px;
@@ -122,6 +188,32 @@
 	max-width:320px;
 }
 .delete-container {
-	height: 150px;
+	max-height: 150px;
 	overflow: scroll;
+}
+.discoverpic {
+	width: 93px;
+	height: 100px;
+}
+.preButton {
+	float: left;
+	position: relative;
+	top: -75px;
+}
+.nextButton {
+	float: right;
+	position: relative;
+	top: -75px;
+}
+.fullscreen {
+	max-height: 100%;
+	max-width: 100%;
+}
+.back {
+	position: fixed;
+	left: 10px;
+	top: 10px;
+}
+.discoverbutton {
+	width: 100%;
 }

@@ -1,5 +1,5 @@
 <?php
-session_start();
+	session_start();
 ?>
 
 <!DOCTYPE html> 
@@ -26,27 +26,69 @@ session_start();
 
 
 
-<div data-role="page">
+<div data-role="page" id="one">
 
 <div data-role="header" data-position="fixed">
 		<a href="login.php" data-icon="check" id="logout" class="ui-btn-left">Logout</a>
 	
 		<h1>Blogs</h1>
 		
-		<a href="settings.php" data-icon="plus" id="add-new-blog" class="ui-btn-right">Blog</a>			
-
-		
-<!--		<a href="#add-blog-popup" data-rel="popup" data-icon="plus" id="add-new-blog" class="ui-btn-right" data-transition="pop" data-position-to="window">Blog</a>			
+		<a href="#add-blog-popup" data-rel="popup" id="add-new-blog" class="ui-btn-right" data-transition="pop" data-position-to="window">Manage</a>			
 	
 		<div data-role="popup" id="add-blog-popup" class="popup-content">
-			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-			<h3>Add Blog</h3>
-			<label for="blog-name">Enter blog name:</label>
-			<input type="text" name="blog-name" id="blog-name" value=""/>
-			<label for="blog-url">Enter blog url:</label>
-			<input type="text" name="blog-url" id="blog-url" value=""/>
-			<a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="add">Add Blog</a>
-		</div>-->
+			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+
+				<form action="phpaddblog.php" id="someform" method="post">
+					
+					<label for="blog-url">Select blog to add:</label>
+					<select name="blog-url" id="blog-url" data-mini="true">
+					   <option value="www.boston.com/bigpicture/">boston.com/bigpicture</option>
+					   <option value="pushthemovement.tumblr.com/">pushthemovement.tumblr.com</option>
+					   <option value="theoccasionaloddcrop.tumblr.com/">theoccasionaloddcrop.tumblr.com</option>
+					   <option value="alakija.shutterchance.com/">alakija.shutterchance.com</option>
+					   <option value="wvs.topleftpixel.com/">wvs.topleftpixel.com</option>
+					   <option value="everythingyoulovetohate.tumblr.com/">everythingyoulovetohate.tumblr.com</option>
+					   <option value="www.cazurro.com/">cazurro.com</option>
+					   <option value="www.deceptivemedia.co.uk/">deceptivemedia.co.uk</option>
+					   <option value="www.positive-negative.com/">positive-negative.com</option>
+					   <option value="chromogenic.net/">chromogenic.net</option>
+					</select> 
+					
+					<input type="submit" value="Add Blog" data-theme='b'/>
+					
+			</form>
+			
+			<form action="phpdeleteblog.php" id="someform" method="post">
+					<legend>Choose blog to delete:</legend>
+					<div class="delete-container" data-theme="c">
+
+					<?php
+						$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
+						if (!$con)
+						{
+							die('Could not connect: ' . mysql_error());
+						}
+		 				mysql_select_db("c_cs147_strand14", $con);
+		 				$query = "SELECT * FROM associations";
+		 				$result = mysql_query($query);
+		 				
+		 				while ($row = mysql_fetch_assoc($result)) {
+		 					$username = $row["username"];
+		 					$url = $row["url"];
+		 					$currentuser = $_SESSION["user"]; 				
+		 					if ($username == $currentuser) {
+		 						echo "<input type='radio' name='delete-group' id='".$url."' value='".$url."' data-theme='c'/>
+         						<label for='".$url."'>".$url."</label>";
+		 					}
+		 				}
+		 			?>
+		 			</div>
+
+					<input type="submit" value="Delete Blog"/>
+				</form>
+		
+			
+		</div>
 			
 	</div><!-- /header -->
 
@@ -58,12 +100,6 @@ session_start();
 		<ul data-role="listview" data-filter="true">
 
 			<?php
-				$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
-				if (!$con)
-				{
-					die('Could not connect: ' . mysql_error());
-				}
- 				mysql_select_db("c_cs147_strand14", $con);
  				$currentuser = $_SESSION["user"]; 					
  				$query = "SELECT * FROM associations WHERE username='$currentuser'";
  				$result = mysql_query($query);
@@ -77,52 +113,70 @@ session_start();
  					$newresult = mysql_query($newquery);	
  					while ($newrow = mysql_fetch_assoc($newresult)) {
 						$photocount = 0;
-						$popupcount = 0;
+						$pagecount = 0;
 						$numphotos = $newrow["numphotos"];
 						$blogurl = $newrow["url"];
 						$blogname = $newrow["name"];
-						echo "<li data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='arrow-d' data-iconpos='right'>
+						echo "<li data-role='collapsible' data-collapsed-icon='arrow-r' data-expanded-icon='delete' data-iconpos='left'>
 				   			<h3>".$blogname."</h3>
 				   			<div class='picture-collection'>";
 						while ($photocount < $numphotos) {
-			   				$popupid = $blogname.'popup'.$photocount;
+			   				$pageid = $blogname.$photocount;
 			   				$photoid = $blogname.'small'.$photocount;
-		
-				   			echo "<a href='#".$popupid."' data-rel='popup' data-transition='pop' data-position-to='window'><img src=".$blogurl.$photocount." class='smallpic'/></a>"; 
+				   			echo "<a href='#".$pageid."' data-transition='pop'><img src=".$blogurl.$photocount." class='smallpic'/></a>"; 
 				   				$photocount++;
 				   		}
 						echo "</div></li>";
-								
-						while ($popupcount < $numphotos) {
-							$popupid = $blogname.'popup'.$popupcount;
-							echo "<div data-role='popup' id='".$popupid."' class='popup-picture' data-theme='a'>
-								<a href='#' data-rel='back' data-role='button' data-theme='a' data-icon='delete' data-iconpos='notext' class='ui-btn-right'>Close</a>
-								<img src=".$blogurl.$popupcount." class='largepic'/>
-								</div>";
-							$popupcount++;
-						}
  					}
  				}
  				
 			?>
 			
 		</ul>
-			
 	</div><!-- /content -->
-
-   
     <div data-role="footer" data-id="samebar" class="nav-glyphish-example" data-position="fixed" data-tap-toggle="false">
-		<div data-role="navbar" class="nav-glyphish-example" data-grid="c">
+		<div data-role="navbar" class="nav-glyphish-example" data-grid="b">
 		<ul>
-			<li><a href="myblogs.php" id="heart" data-icon="custom" class="ui-btn-active">Blogs</a></li>
-			<li><a href="discover.php" id="magnify" data-icon="custom">Discover</a></li>
-			<li><a href="streamview.php" id="landscape" data-icon="custom">Stream</a></li>
-			<li><a href="settings.php" id="gear" data-icon="custom">Manage</a></li>
+			<li><a href="myblogs.php" id="heart" data-icon="custom" class="ui-btn-active" data-ajax="false">Blogs</a></li>
+			<li><a href="discover.php" id="magnify" data-icon="custom" data-ajax="false">Discover</a></li>
+			<li><a href="streamview.php" id="landscape" data-icon="custom" data-ajax="false">Stream</a></li>
 		</ul>
 		</div>
 	</div>
 
 </div><!-- /page -->
+
+			<?php
+				$con = mysql_connect("mysql-user-master.stanford.edu", "ccs147strand14", "faexeepi");
+				if (!$con)
+				{
+					die('Could not connect: ' . mysql_error());
+				}
+ 				mysql_select_db("c_cs147_strand14", $con);
+ 				$currentuser = $_SESSION["user"]; 					
+ 				$query = "SELECT * FROM associations WHERE username='$currentuser'";
+ 				$result = mysql_query($query);
+ 				while ($row = mysql_fetch_assoc($result)) {
+ 					$url = $row["url"];
+ 					$newquery = "SELECT * FROM allblogs WHERE url = '$url'";
+ 					$newresult = mysql_query($newquery);	
+ 					while ($newrow = mysql_fetch_assoc($newresult)) {
+						$pagecount = 0;
+						$numphotos = $newrow["numphotos"];
+						$blogurl = $newrow["url"];
+						$blogname = $newrow["name"];
+						while ($pagecount < $numphotos) {
+							$pageid = $blogname.$pagecount;
+							echo "<div data-role='page' id='".$pageid."' data-theme='a'>
+								<a href='#one' data-role='button' data-theme='d' data-icon='delete' data-iconpos='notext' class='back' data-transition='pop'>Close</a>
+								<img src='".$blogurl.$pagecount."' class='fullscreen'/>
+								</div>";
+							$pagecount++;
+						}
+ 					}
+ 				}
+ 				
+			?>
 
 </body>
 </html>
