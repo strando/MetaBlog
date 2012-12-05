@@ -16,6 +16,7 @@ session_start();
 
 	
 	$name=$_POST["delete-group"];
+	$indicator=$_POST["indicator"];	
 	$username=$_SESSION["user"];
 		
 	$sql= "DELETE FROM associations WHERE username='$username' AND url='$name'";
@@ -25,7 +26,12 @@ session_start();
 window.alert('Blog Deleted!')
 </script>";	
 	
-	$returnurl = 'myblogs.php';
+	if ($indicator == 'blogs') 
+		$returnurl = 'myblogs.php';
+	if ($indicator == 'discover') 
+		$returnurl = 'discover.php';
+	if ($indicator == 'stream') 
+		$returnurl = 'streamview.php';
   	echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$returnurl.'">';
 	
 	?>

@@ -8,7 +8,11 @@
  	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 
+
 	<link rel="stylesheet" href="jquery.mobile-1.2.0.css" />
+	
+		<link rel="stylesheet" href="metablog-theme.css"/>
+
 
 	<link rel="stylesheet" href="style.css" />
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -22,19 +26,19 @@
 	
 <body> 
 
-<div data-role="page" id="one">
+<div data-role="page" id="one" data-theme="a">
 
 	<div>
 		<img src="strandsm.png" class="centerpic"/>	
 	</div>
 
 	<div data-role="header">
-		<h1>MetaBlog</h1>
+		<h1 style="font-size: 150%;">MetaBlog</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
 	
-			<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
+			<div data-role="collapsible" data-iconpos="left" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
 				<h2>Login</h2>
 				<form action="phplogin.php" id="someform" method="post">
 				
@@ -52,7 +56,7 @@
 <!--				<a href="#" data-role="button" data-mini="true" class="about-button">Forgot Password</a> -->
 			</div>	
 	
-			<div data-role="collapsible" data-iconpos="right" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
+			<div data-role="collapsible" data-iconpos="left" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" class="login-collapsible">
 				<h2>Are you new to Metablog?</h2>
 				<div data-type="field-contain">
 				<form action="phpregister.php" id="someform" method="post">

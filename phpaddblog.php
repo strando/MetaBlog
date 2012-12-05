@@ -14,7 +14,8 @@ session_start();
 	} 
 	 mysql_select_db("c_cs147_strand14", $con); 
 
-	$url=$_POST["blog-url"];	
+	$url=$_POST["blog-url"];
+	$indicator=$_POST["indicator"];	
 	$username=$_SESSION["user"];
 	
 	$query = "SELECT * FROM associations WHERE username='$username' AND url='$url'";
@@ -37,7 +38,12 @@ session_start();
 		</script>";
 	}	
 	
-	$returnurl = 'myblogs.php';
+	if ($indicator == 'blogs') 
+		$returnurl = 'myblogs.php';
+	if ($indicator == 'discover') 
+		$returnurl = 'discover.php';
+	if ($indicator == 'stream') 
+		$returnurl = 'streamview.php';
    	echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$returnurl.'">';
 	
 	?>

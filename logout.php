@@ -7,7 +7,7 @@ session_start();
 <body>
 
 	<?php
-		$_SESSION['user']=NULL;
+		unset($_SESSION['user']);
 		$url = 'login.php';
 		echo '<META HTTP-EQUIV=Refresh CONTENT="0; URL='.$url.'">'; 
 	?>
