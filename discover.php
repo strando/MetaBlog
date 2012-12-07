@@ -180,7 +180,7 @@
 		
 		
 		<form action="phpaddblog2.php" id="someform" method="post" class="discoverbutton">
-			<input type="submit" name="blog-url" id="blog-url" value="<?= $shorturl ?>" data-icon="plus" data-iconpos="right" />
+			<input type="submit" name="blog-url" id="blog-url" value="<?= $blogurl ?>" data-icon="plus" data-iconpos="right" />
 		</form>
 		
 		<form action="discover.php" id="someform" method="post" class="discoverbutton">
