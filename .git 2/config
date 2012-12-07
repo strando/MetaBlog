@@ -1,0 +1,15 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = https://github.com/klein141/MetaBlog.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "strando"]
+	url = https://github.com/strando/MetaBlog.git
+	fetch = +refs/heads/*:refs/remotes/strando/*
